@@ -125,7 +125,6 @@ export default () => {
             value={{
                 selectedCategoryIndex,
                 setSelectedCategoryIndex,
-                categoryDiff,
                 transitionTime,
             }}
         >

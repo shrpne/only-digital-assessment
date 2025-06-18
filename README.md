@@ -1,13 +1,19 @@
 # only.digital assessment
 
-### Installation
+https://only-digital-assessment-shrpnes-projects.vercel.app/
+
+### Try in a playground
+https://stackblitz.com/github/shrpne/only-digital-assessment
+
+
+### Install locally
 
 ```bash
 # Clone the repository (if applicable)
-# git clone <repository-url>
+git clone git@github.com:shrpne/only-digital-assessment.git
 
 # Navigate to the project directory
-cd assessment-test-only
+cd only-digital-assessment
 
 # Install dependencies
 npm ci

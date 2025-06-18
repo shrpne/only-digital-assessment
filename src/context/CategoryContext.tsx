@@ -3,7 +3,6 @@ import { createContext, useState, useContext } from 'react';
 type CategoryContextType = {
     selectedCategoryIndex: number;
     setSelectedCategoryIndex: (index: number) => void;
-    categoryDiff: number;
     transitionTime: number;
 };
 

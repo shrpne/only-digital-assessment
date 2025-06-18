@@ -2,9 +2,8 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import type { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { /*Pagination,*/ FreeMode } from 'swiper/modules';
+import { FreeMode } from 'swiper/modules';
 import 'swiper/css';
-// import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 import type { Category } from '@/data/categories';
 import { breakpoints } from '@/globalStyles';
@@ -13,10 +12,6 @@ import useIsMobile from '@/hooks/useIsMobile';
 const StyledSwiper = styled(Swiper)`
     margin-inline: calc(-1 * var(--page-padding));
     padding-inline: var(--page-padding);
-
-    & .swiper-pagination {
-        display: none;
-    }
 
     /* make space between slides draggable */
     & .swiper-slide:not(:last-child)::after {
@@ -37,25 +32,6 @@ const StyledSwiper = styled(Swiper)`
 
         & .swiper-slide:not(.is-active) {
             opacity: 0.4;
-        }
-
-        & .swiper-pagination {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            height: 25px;
-
-            margin: auto;
-            max-width: max-content;
-            right: 0;
-
-            --swiper-pagination-bottom: 13px;
-            --swiper-pagination-bullet-size: 6px;
-            --swiper-pagination-color: var(--main-color);
-            --swiper-pagination-bullet-inactive-color: var(--main-color);
-            --swiper-pagination-bullet-inactive-opacity: 0.4;
-            --swiper-pagination-bullet-horizontal-gap: 0;
         }
     }
 `;
@@ -137,9 +113,6 @@ const YearsSlider: React.FC<{
             loop={false}
             grabCursor={true}
             slideToClickedSlide={true}
-            // pagination={{
-            //     clickable: true,
-            // }}
             freeMode={{
                 enabled: isMobile,
                 sticky: false,
@@ -149,7 +122,7 @@ const YearsSlider: React.FC<{
             }}
             onSnapIndexChange={handleSlideChange}
             onAfterInit={handleSlideChange}
-            modules={[/*Pagination,*/ FreeMode]}
+            modules={[FreeMode]}
         >
             {Object.entries(years).map(([year, description], index) => (
                 <SwiperSlide
